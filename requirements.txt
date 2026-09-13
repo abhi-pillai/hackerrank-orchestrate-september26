@@ -1,0 +1,13 @@
+# Core runtime has no hard third-party dependency beyond the standard
+# library for the deterministic financial engine. The two optional
+# capabilities below degrade gracefully if not installed / not configured.
+
+# Gemini SDK (optional): only used if GEMINI_API_KEY is set. Without it,
+# code/main.py runs entirely on the deterministic financial engine.
+google-genai>=0.3.0
+
+# Local OCR for resolving blank financial_events.amount from linked images
+# (dataset/media/images/*.png). Falls back to unresolved (never fabricated)
+# if not installed.
+pytesseract>=0.3.10
+Pillow>=10.0.0
